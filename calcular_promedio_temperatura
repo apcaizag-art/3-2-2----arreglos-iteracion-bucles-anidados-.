@@ -1,1 +1,55 @@
+# Definición de los datos de temperatura para 3 ciudades durante 4 semanas
+# La estructura es un diccionario donde las claves son los nombres de las ciudades y los valores son listas de temperaturas.
+temperaturas_ciudades = {
+    'Guayaquil': [26, 28, 27, 29],
+    'Quito': [15, 16, 14, 17],
+    'Cuenca': [18, 17, 19, 16]
+}
 
+
+def calcular_promedio_temperaturas(datos_temperatura):
+    """
+    Calcula la temperatura promedio para cada ciudad a partir de un diccionario de datos.
+
+    Args:
+        datos_temperatura (dict): Un diccionario donde las claves son los nombres de las ciudades
+                                 y los valores son listas de temperaturas.
+
+    Returns:
+        dict: Un nuevo diccionario con el nombre de la ciudad como clave y su temperatura promedio como valor.
+    """
+    promedios = {}  # Inicializamos un diccionario vacío para guardar los promedios
+    # Iteramos sobre cada ciudad y su lista de temperaturas en el diccionario de entrada
+    for ciudad, temperaturas in datos_temperatura.items():
+        # Sumamos todas las temperaturas de la lista y las dividimos por el número de temperaturas
+        # para obtener el promedio. Usamos len() para contar los elementos de la lista.
+        promedio_ciudad = sum(temperaturas) / len(temperaturas)
+        # Guardamos el promedio calculado en el diccionario de promedios, usando el nombre de la ciudad como clave
+        promedios[ciudad] = promedio_ciudad
+
+    return promedios
+
+
+# --- Pruebas y Verificación ---
+
+# Llamamos a la función con nuestros datos de ejemplo
+promedios_calculados = calcular_promedio_temperaturas(temperaturas_ciudades)
+
+# Imprimimos los resultados para verificar que la función funciona correctamente
+print("Temperaturas promedio por ciudad:")
+# Iteramos sobre el diccionario de promedios para imprimir cada resultado de forma clara
+for ciudad, promedio in promedios_calculados.items():
+    print(f"El promedio de temperatura en {ciudad
+
+
+
+
+
+
+C:\Users\User\AppData\Local\Programs\Python\Python313\python.exe C:\Users\User\Desktop\temperatura_promedio.py\main.py 
+Temperaturas promedio por ciudad:
+El promedio de temperatura en Guayaquil es: 27.50°C
+El promedio de temperatura en Quito es: 15.50°C
+El promedio de temperatura en Cuenca es: 17.50°C
+
+Process finished with exit code 0
